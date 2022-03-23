@@ -1,0 +1,15 @@
+<h1>Create new category</h1>
+
+<%= form_with model: @category do |form| %>
+  <%= form.label :title %><br>
+  <%= form.select :title, ['action', 'adventure', 'comedy', 'crime and gungster', 'drama', 'historical', 'science',
+                           'musicals', 'horror', 'western'], selected: 'public' %><br>
+  <%= form.file_field :images %><br>
+
+  <%= form.label :description %><br>
+  <%= form.text_area :description %><br>
+  <% @category.errors.full_messages_for(:description).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  <%= form.submit %>
+<% end %>
