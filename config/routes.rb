@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories do
+    resource :films
+    get 'films_collection', to: 'films#films_by_category'
+  end
+
   root 'categories#index'
   devise_for :users
 

@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
 
   has_many_attached :images, dependent: :destroy
+  has_many :films, dependent: :destroy
   validates :title, presence: true
   validates :description,  presence: true, length: { minimum: 50, maximum: 900 }
   validates :images, attached: true, content_type: [:png, :jpg, :jpeg],

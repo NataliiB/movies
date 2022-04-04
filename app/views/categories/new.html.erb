@@ -3,7 +3,7 @@
 <%= form_with model: @category do |form| %>
   <%= form.label :title %><br>
   <%= form.select :title, ['action', 'adventure', 'comedy', 'crime and gungster', 'drama', 'historical', 'science',
-                           'musicals', 'horror', 'western'], selected: 'public' %><br>
+                           'musicals', 'horror', 'western'] %><br>
   <%= form.file_field :images %><br>
 
   <%= form.label :description %><br>
